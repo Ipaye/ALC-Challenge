@@ -1,0 +1,33 @@
+{
+  "name": "alc-studentrecord",
+  "version": "1.0.0",
+  "description": "Api created to handle student records and als the front end to consume the Api",
+  "main": "server.js",
+  "scripts": {
+    "test": "mocha",
+    "start": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ipaye/ALC-Challenge.git"
+  },
+  "keywords": [
+    "ALC",
+    "nodejs-api"
+  ],
+  "author": "Ipaye Alameen <Akinkunmi007@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Ipaye/ALC-Challenge/issues"
+  },
+  "homepage": "https://github.com/Ipaye/ALC-Challenge#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.1",
+    "mongoose": "^4.12.0",
+    "morgan": "^1.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  }
+}
