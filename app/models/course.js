@@ -6,15 +6,15 @@ const courseSchema = new schema({
     type: String,
   },
   courseCode: {
-    type: Number,
+    type: String,
   },
   courseUnit : {
     type : Number
   },
-  student : [{
+  student : {
     type : schema.Types.ObjectId,
-    ref : 'student'
-  }]
+    ref : 'Student'
+  }
 });
 
 
