@@ -12,7 +12,7 @@ const studentSchema = new schema({
   },
   gender: {
     type: String,
-    required: true
+    // required: true
   },
   email: {
     type: String,
@@ -35,7 +35,7 @@ const studentSchema = new schema({
   },
   courses : [{
     type : schema.Types.ObjectId,
-    ref : 'course'
+    ref : 'Course'
   }]
 });
 
