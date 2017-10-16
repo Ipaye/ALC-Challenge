@@ -87,8 +87,9 @@ module.exports = {
     const {
       studentId
     } = req.params;
-    Student.findById(studentId).then((student) => {
-      console.log('Student Info', student);
+    Student.findById(studentId).populate('courses').then((student) => {
+      // console.log('Student Info', student.courses);
+      res.status(200).json(student.courses);
     }).catch((err) => {
       next(err);
     })
@@ -100,7 +101,7 @@ module.exports = {
     } = req.params;
     const newCourse = new Course(req.body);
     Student.findById(studentId).then((student) => {
-      console.log('Student Info', student);
+      // console.log('Student Info', student);
       newCourse.student = student;
       newCourse.save().then(() => {
         console.log(`Course saved`);
