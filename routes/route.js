@@ -12,4 +12,7 @@ router.route('/:studentId')
   .patch(studentController.updateAStudent)
   .delete(studentController.deleteAStudent);
 
+  router.route('/:studentId/course')
+  .get(studentController.getAStudentCourse)
+  .post(studentController.makeAStudentCourse);
 module.exports = router;
