@@ -10,6 +10,7 @@ const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 
 // mongoose Connection 
+// mongodb://<dbuser>:<dbpassword>@ds121495.mlab.com:21495/alc-student-record
 mongoose.connect('mongodb://localhost/ALC-studentRecord', {useMongoClient :true});
 
 // Check Connection

@@ -2,16 +2,16 @@ const express = require('express');
 const router = express.Router();
 
 const studentController = require('../app/controllers/studentController');
-const { validateParam, schemas } = require('../app/helpers/validator');
+const { validateParam, schemas, ValidateBody } = require('../app/helpers/validator');
 
 
 router.route('/')
   .get(studentController.getAllStudents)
-  .post(studentController.createStudent);
+  .post( ValidateBody(schemas.studentSchema),studentController.createStudent);
 
 router.route('/:studentId')
   .get(validateParam(schemas.idSchema, 'studentId') ,studentController.getAStudent)
-  .patch(validateParam(schemas.idSchema, 'studentId') ,studentController.updateAStudent)
+  .patch(validateParam(schemas.idSchema, 'studentId'),ValidateBody(schemas.studentSchema) ,studentController.updateAStudent)
   .delete(validateParam(schemas.idSchema, 'studentId'), studentController.deleteAStudent);
 
   router.route('/:studentId/course')
