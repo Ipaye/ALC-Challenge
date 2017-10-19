@@ -12,14 +12,14 @@ const studentSchema = new schema({
   },
   gender: {
     type: String,
-    // required: true
   },
   email: {
     type: String,
+    lowercase : true,
+    required: true
   },
   address: {
     type: String,
-    required: true
   },
   phoneNumber: {
     type: String,
@@ -36,7 +36,11 @@ const studentSchema = new schema({
   courses : [{
     type : schema.Types.ObjectId,
     ref : 'Course'
-  }]
+  }],
+  date_created : {
+    type : Date,
+    default : Date.now()
+  }
 });
 
 
