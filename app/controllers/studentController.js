@@ -19,8 +19,8 @@ module.exports = {
   /**
    * Create a student
    */
-  createStudent: (req, res, next) => {
-    const newStudent = new Student(req.body);
+  createStudent: (req, res, next) => {   
+    const newStudent = new Student(req.value.body);
     newStudent.save().then((student) => {
       console.log('saved');
       res.status(201).json({
@@ -39,7 +39,7 @@ module.exports = {
   getAStudent: (req, res, next) => {
     const {
       studentId
-    } = req.params;
+    } = req.value.params;
     Student.findById(studentId).then((student) => {
       res.status(200).json(student);
     }).catch((err) => {
@@ -53,8 +53,8 @@ module.exports = {
   updateAStudent: (req, res, next) => {
     const {
       studentId
-    } = req.params;
-    const newDetails = req.body;
+    } =  req.value.params;
+    const newDetails = req.value.body;
     Student.findByIdAndUpdate(studentId, newDetails).then(() => {
       res.status(200).json({
         "success": true
@@ -72,7 +72,7 @@ module.exports = {
   deleteAStudent: (req, res, next) => {
     const {
       studentId
-    } = req.params;
+    } =  req.value.params;
     Student.findByIdAndRemove(studentId).then(() => {
       res.status(200).json({
         "success": true,
@@ -86,7 +86,7 @@ module.exports = {
   getAStudentCourse: (req, res, next) => {
     const {
       studentId
-    } = req.params;
+    } =  req.value.params;
     Student.findById(studentId).populate('courses').then((student) => {
       // console.log('Student Info', student.courses);
       res.status(200).json(student.courses);
@@ -98,7 +98,7 @@ module.exports = {
   makeAStudentCourse: (req, res, next) => {
     const {
       studentId
-    } = req.params;
+    } =  req.value.params;
     const newCourse = new Course(req.body);
     Student.findById(studentId).then((student) => {
       // console.log('Student Info', student);
