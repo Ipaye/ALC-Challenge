@@ -33,13 +33,9 @@ const studentSchema = new schema({
   parentPhoneNumber: {
     type: String,
   },
-  courses : [{
-    type : schema.Types.ObjectId,
-    ref : 'Course'
-  }],
   date_created : {
     type : Date,
-    default : Date.now()
+    default : Date.now
   }
 });
 
