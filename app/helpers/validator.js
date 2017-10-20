@@ -42,15 +42,15 @@ module.exports = {
       param: Joi.string().regex(/^[0-9a-fA-F]{24}$/).required()
     }),
     studentSchema: Joi.object().keys({
-      firstName : Joi.string().required(),
-      lastName : Joi.string().required(),
-      email : Joi.string().email().required(),
-      address : Joi.string(),
-      fatherName : Joi.string(),
-      motherName : Joi.string(),
-      gender : Joi.string(),
-      phoneNumber : Joi.number(),
-      parentPhoneNumber : Joi.number()
+      firstName: Joi.string().required(),
+      lastName: Joi.string().required(),
+      email: Joi.string().email().required(),
+      address: Joi.string(),
+      fatherName: Joi.string(),
+      motherName: Joi.string(),
+      gender: Joi.string(),
+      phoneNumber: Joi.number(),
+      parentPhoneNumber: Joi.number()
     })
   }
 
