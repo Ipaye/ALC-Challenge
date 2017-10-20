@@ -1,16 +1,13 @@
 const Student = require('../models/student');
-const Course = require('../models/course');
 
 module.exports = {
   /**
    * Get all student
    */
   getAllStudents: (req, res, next) => {
-    Student.find({}).then((users) => {
-      res.status(200).json({
-        users
-      })
-      console.log('Found users', users);
+    Student.find({}).then((students) => {
+      res.status(200).json(students)
+      // console.log('Found students', students);
     }).catch((err) => {
       console.log(err);
     })
@@ -19,7 +16,7 @@ module.exports = {
   /**
    * Create a student
    */
-  createStudent: (req, res, next) => {   
+  createStudent: (req, res, next) => {
     const newStudent = new Student(req.value.body);
     newStudent.save().then((student) => {
       console.log('saved');
@@ -41,6 +38,13 @@ module.exports = {
       studentId
     } = req.value.params;
     Student.findById(studentId).then((student) => {
+      if (student.id == null) {
+        res.status(404).json({
+          "message": "Student Doesnt Exist"
+        });
+        throw new Error('No Student Found');
+        next(err);
+      }
       res.status(200).json(student);
     }).catch((err) => {
       next(err);
@@ -53,7 +57,7 @@ module.exports = {
   updateAStudent: (req, res, next) => {
     const {
       studentId
-    } =  req.value.params;
+    } = req.value.params;
     const newDetails = req.value.body;
     Student.findByIdAndUpdate(studentId, newDetails).then(() => {
       res.status(200).json({
@@ -62,8 +66,6 @@ module.exports = {
     }).catch((err) => {
       next(err);
     })
-
-
   },
 
   /**
@@ -72,54 +74,25 @@ module.exports = {
   deleteAStudent: (req, res, next) => {
     const {
       studentId
-    } =  req.value.params;
-    Student.findByIdAndRemove(studentId).then(() => {
-      res.status(200).json({
-        "success": true,
-        "message": "Student Record Deleted successfully"
+    } = req.value.params;
+
+    Student.findById(studentId).then((student) => {
+      console.log(student);
+      if (!student || null) {
+        throw new Error("No Student Found");
+        res.status(404);
+        next(err);
+      }
+      Student.findByIdAndRemove(student.id).then(() => {
+        res.status(200).json({
+          "success": true,
+          "message": "Student Record Deleted successfully"
+        })
+      }).catch((err) => {
+        next(err);
       })
     }).catch((err) => {
       next(err);
     })
-  },
-
-  getAStudentCourse: (req, res, next) => {
-    const {
-      studentId
-    } =  req.value.params;
-    Student.findById(studentId).populate('courses').then((student) => {
-      // console.log('Student Info', student.courses);
-      res.status(200).json(student.courses);
-    }).catch((err) => {
-      next(err);
-    })
-
-  },
-  makeAStudentCourse: (req, res, next) => {
-    const {
-      studentId
-    } =  req.value.params;
-    const newCourse = new Course(req.body);
-    Student.findById(studentId).then((student) => {
-      // console.log('Student Info', student);
-      newCourse.student = student;
-      newCourse.save().then(() => {
-        console.log(`Course saved`);
-      }).catch((err) => {
-        next(err);
-      });
-      student.courses.push(newCourse);
-      student.save().then(() => {
-        console.log(`Student updated`);
-        res.status(201).json(newCourse);
-      }).catch((err) => {
-        next(err);
-      });
-
-    }).catch((err) => {
-      next(err);
-    })
-
   }
-
 }
