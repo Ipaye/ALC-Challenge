@@ -23,8 +23,6 @@ mongoose.connection.on('connect', ()=> {
 // Custom requires
 const student = require('./routes/route');
 
-
-
 const PORT = process.env.PORT || 4000;
 // instantiate express
 const app = express();
@@ -33,7 +31,6 @@ const app = express();
 app.use(morgan('dev'));
 app.use(bodyParser.json());
 // app.use(bodyParser.urlencoded({extended:false}))
-
 
 // Routes
 app.use('/students', student);
