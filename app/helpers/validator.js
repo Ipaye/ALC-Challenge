@@ -59,7 +59,7 @@ module.exports = {
       email: Joi.string().email(),
       address: Joi.string(),
       course: Joi.string(),
-      dob: Joi.string().required(),
+      dob: Joi.string(),
       gender: Joi.string(),
       phoneNumber: Joi.number(),
       level: Joi.number(),

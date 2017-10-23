@@ -1,4 +1,4 @@
-# ALC Student Record
+# ALC Student Record 📚
 
 This APi has routes to do to the following
 
@@ -18,8 +18,17 @@ clone this project locally using `git clone filename`
 RUN `npm install` to get all dependencies.
 
 
-# TODO
+# TODO's
 
-- [x] Finished Student Routes
-- [ ] Create Coures Routes
-- [ ] Add Validation. 
+- [x] Finish Student Routes
+- [x] Create Coures Routes
+- [x] Add Validation.
+- [x] Connect to mlab.
+
+
+# Modules Completed 🙋✅
+
+- [x] Get all students available.
+- [x] Get a Student and display their details.
+- [x] Get a student and update their details.
+- [x] delete a single student record.
