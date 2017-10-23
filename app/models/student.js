@@ -15,14 +15,14 @@ const studentSchema = new schema({
   },
   email: {
     type: String,
-    lowercase : true,
+    lowercase: true,
     required: true
   },
   address: {
     type: String,
   },
   phoneNumber: {
-    type: String,
+    type: Number,
   },
   dob: {
     type: String,
@@ -34,9 +34,13 @@ const studentSchema = new schema({
   course: {
     type: String,
   },
-  date_created : {
-    type : Date,
-    default : Date.now
+  profileImage: {
+    type: String,
+    default: 'https://upload.wikimedia.org/wikipedia/commons/7/7c/Profile_avatar_placeholder_large.png'
+  },
+  date_created: {
+    type: Date,
+    default: Date.now
   }
 });
 

@@ -11,6 +11,6 @@ router.route('/')
 
 router.route('/:studentId')
   .get(validateParam(schemas.idSchema, 'studentId') ,studentController.getAStudent)
-  .patch([validateParam(schemas.idSchema, 'studentId'), ValidateBody(schemas.studentSchema)],studentController.updateAStudent)
+  .patch([validateParam(schemas.idSchema, 'studentId'), ValidateBody(schemas.updateSchema)],studentController.updateAStudent)
   .delete(validateParam(schemas.idSchema, 'studentId'), studentController.deleteAStudent);
 module.exports = router;

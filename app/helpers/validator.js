@@ -50,7 +50,20 @@ module.exports = {
       dob: Joi.string().required(),
       gender: Joi.string(),
       phoneNumber: Joi.number(),
-      level: Joi.number()
+      level: Joi.number(),
+      profileImage : Joi.string()
+    }),
+    updateSchema : Joi.object().keys({
+      firstName: Joi.string(),
+      lastName: Joi.string(),
+      email: Joi.string().email(),
+      address: Joi.string(),
+      course: Joi.string(),
+      dob: Joi.string().required(),
+      gender: Joi.string(),
+      phoneNumber: Joi.number(),
+      level: Joi.number(),
+      profileImage : Joi.string()
     })
   }
 
