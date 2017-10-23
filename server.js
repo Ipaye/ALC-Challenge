@@ -1,4 +1,5 @@
 //Require Modules
+require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const mongoose = require('mongoose');
@@ -10,8 +11,7 @@ const bodyParser = require('body-parser');
 mongoose.Promise = global.Promise;
 
 // mongoose Connection 
-// mongodb://<dbuser>:<dbpassword>@ds121495.mlab.com:21495/alc-student-record
-mongoose.connect('mongodb://localhost/ALC-studentRecord', {useMongoClient :true});
+mongoose.connect('mongodb://ipaye:studentrecord@ds121495.mlab.com:21495/alc-student-record', {useMongoClient :true});
 
 // Check Connection
 mongoose.connection.on('connect', ()=> {
