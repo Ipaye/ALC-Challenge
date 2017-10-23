@@ -46,11 +46,11 @@ module.exports = {
       lastName: Joi.string().required(),
       email: Joi.string().email().required(),
       address: Joi.string(),
-      fatherName: Joi.string(),
-      motherName: Joi.string(),
+      course: Joi.string(),
+      dob: Joi.string().required(),
       gender: Joi.string(),
       phoneNumber: Joi.number(),
-      parentPhoneNumber: Joi.number()
+      level: Joi.number()
     })
   }
 

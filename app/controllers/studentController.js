@@ -7,9 +7,9 @@ module.exports = {
   getAllStudents: (req, res, next) => {
     Student.find({}).then((students) => {
       res.status(200).json(students)
-      // console.log('Found students', students);
     }).catch((err) => {
       console.log(err);
+      next(err);
     })
   },
 
@@ -27,7 +27,6 @@ module.exports = {
     }).catch((err) => {
       next(err);
     })
-    console.log('student created', newStudent);
   },
 
   /**
@@ -77,7 +76,6 @@ module.exports = {
     } = req.value.params;
 
     Student.findById(studentId).then((student) => {
-      console.log(student);
       if (!student || null) {
         throw new Error("No Student Found");
         res.status(404);

@@ -24,13 +24,14 @@ const studentSchema = new schema({
   phoneNumber: {
     type: String,
   },
-  fatherName: {
+  dob: {
     type: String,
+    required: [true, 'You Must set your Date of Birth and you cannot Change it.']
   },
-  motherName: {
-    type: String,
+  level: {
+    type: Number,
   },
-  parentPhoneNumber: {
+  course: {
     type: String,
   },
   date_created : {
