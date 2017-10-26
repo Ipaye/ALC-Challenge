@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    <%=title%>
+  </title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+  <!-- <link href="/stylesheets/style.css" rel="stylesheet"> -->
+  <style>
+    section#student-section {
+      padding-top: 50px;
+    }
+
+    .trigger {
+      padding: 1px 10px;
+      font-size: 12px;
+      font-weight: 400;
+      border-radius: 10px;
+      background-color: #eee;
+      color: #212121;
+      display: inline-block;
+      margin: 2px 5px;
+    }
+
+    .hoverable,
+    .trigger {
+      transition: box-shadow 0.55s;
+      box-shadow: 0;
+    }
+
+    .hoverable:hover,
+    .trigger:hover {
+      transition: box-shadow 0.45s;
+      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    }
+
+    .active {
+      background-color: rgba(245, 23, 189, 0.671) !important;
+    }
+
+    .input-group.md-form.form-sm.form-2 input {
+      border: 1px solid #bdbdbd;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    .input-group.md-form.form-sm.form-2 input.grey-border {
+      border: 1px solid #e9ecef;
+    }
+
+    .input-group input[type=text]:focus:not([readonly]) {
+      box-shadow: none;
+      padding: 10px;
+    }
+
+    .form-2 .input-group-addon {
+      border: 1px solid #e9ecef;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark amber">
+      <div class="container">
+        <a class="navbar-brand" href="/">Student Records</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href="/">
+                <i class="fa fa-envelope"></i> Home </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link waves-effect waves-light" href="/student">
+                <i class="fa fa-users"></i> All Students
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link waves-effect waves-light" href="/student/add">
+                <i class="fa fa-user"></i> Add Student</a>
+            </li>
+          </ul>
+
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section id="student-section">
+    <div class="container">
+
+      <div class="card">
+        <div class="card-body">
+
+          <!-- Grid row -->
+
+          <div class="row">
+            <!-- Grid column -->
+            <div class="col-md-12 col-sm-12 col-xs-12 mt-4">
+
+              <div class="input-group md-form form-sm form-2 pl-0">
+                <input class="form-control my-0 py-1 grey-border" type="text" placeholder="Search" aria-label="Search">
+                <span class="input-group-addon waves-effect grey lighten-3" id="basic-addon1">
+                  <a>
+                    <i class="fa fa-search text-grey" aria-hidden="true"></i>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+            <!-- Grid column -->
+
+
+            <!-- Grid row -->
+
+            <!--Table-->
+            <div class="col-md-12 col-xs-12 col-sm-12 mt-4">
+              <table class="table table-responsive">
+                <!--Table head-->
+                <thead>
+                  <tr>
+                    <th>S.No</th>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <!-- <th>Action</th> -->
+                  </tr>
+                </thead>
+                <!--Table head-->
+
+                <!--Table body-->
+                <% students.forEach(function(student, index) {%>
+                  <tbody>
+                    <tr>
+                      <th scope="row">
+                        <%=index + 1%>
+                      </th>
+                      <td>
+                        <%=student.firstName%>
+                          <%=student.lastName%>
+                      </td>
+                      <td>
+                        <%=student.email%>
+                      </td>
+                    </tr>
+                  </tbody>
+                  <!--Table body-->
+                  <%});%>
+              </table>
+            </div>
+            <!--Table-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+</body>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/popper.min.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+</body>
+
+</html>

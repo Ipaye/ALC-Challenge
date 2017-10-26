@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    <%=title%>
+  </title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+  <!-- <link href="/stylesheets/style.css" rel="stylesheet"> -->
+  <style>
+    .form-simple .font-small {
+      font-size: 0.8rem;
+    }
+
+    .form-simple .header {
+      border-top-left-radius: .3rem;
+      border-top-right-radius: .3rem;
+    }
+
+    .form-simple input[type=text]:focus:not([readonly]) {
+      border-bottom: 1px solid #ff3547;
+      -webkit-box-shadow: 0 1px 0 0 #ff3547;
+      box-shadow: 0 1px 0 0 #ff3547;
+    }
+
+    .form-simple input[type=text]:focus:not([readonly])+label {
+      color: #4f4f4f;
+    }
+
+    .form-simple input[type=password]:focus:not([readonly]) {
+      border-bottom: 1px solid #ff3547;
+      -webkit-box-shadow: 0 1px 0 0 #ff3547;
+      box-shadow: 0 1px 0 0 #ff3547;
+    }
+
+    .form-simple input[type=password]:focus:not([readonly])+label {
+      color: #4f4f4f;
+    }
+
+    .active {
+      background-color: rgba(245, 23, 189, 0.671) !important;
+    }
+
+    .form-simple {
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-amber ">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <strong>Student Records</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <ul class="nav navbar-nav nav-flex-icons ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="fa fa-home"></i>Home
+              </a>
+            </li>
+            <li class="nav-item ">
+              <a class="nav-link " href="/student">
+                <i class="fa fa-users"></i>View All Student</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/add">
+                <i class="fa fa-user"></i>Add Student</a>
+              <span class="sr-only">(current)</span>
+            </li>
+          </ul>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  </header>
+
+  <section class="form-simple">
+    <div class="container">
+
+      <!--Form with header-->
+      <div class="card">
+
+        <!--Header-->
+        <div class="header pt-3 grey lighten-2">
+
+          <div class="row d-flex justify-content-start">
+            <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Add Student</h3>
+          </div>
+
+        </div>
+        <!--Header-->
+
+        <div class="card-body mx-4 mt-4">
+
+          <!--Body-->
+          <form action="/student/add" method="post">
+            <div class="md-form">
+              <input type="text" id="firstname" name="firstName" class="form-control">
+              <label for="Form-email4">Your First Name</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="lastName" class="form-control">
+              <label for="Form-email4">Your last Name</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="email" class="form-control">
+              <label for="Form-email4">Your email</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="address" class="form-control">
+              <label for="Form-email4">Your Address</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="phoneNumber" class="form-control">
+              <label for="Form-email4">Your phone Number</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="dob" class="form-control">
+              <label for="Form-email4">Your Date of Birth</label>
+            </div>
+            <div class="md-form">
+              <input type="text" name="course" class="form-control">
+              <label for="Form-email4">Your Course of study</label>
+            </div>
+            <div class="md-form">
+              <select name="gender" class="form-control" required="required">
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+            <div class="form-inline">
+              <label for="Level">Level : </label>
+              <div class="form-group">
+                <input name="level" type="radio" id="radio11">
+                <label for="radio11">100</label>
+              </div>
+
+              <div class="form-group">
+                <input name="level" type="radio" id="radio21">
+                <label for="radio21">200</label>
+              </div>
+
+              <div class="form-group">
+                <input name="level" type="radio" id="radio31">
+                <label for="radio31">300</label>
+              </div>
+              <div class="form-group">
+                <input name="level" type="radio" id="radio31">
+                <label for="radio31">400</label>
+              </div>
+              <div class="form-group">
+                <input name="level" type="radio" id="radio31">
+                <label for="radio31">500</label>
+              </div>
+
+            </div>
+            <div class="text-center">
+              <button class="btn btn-unique" type="submit">Add Student
+                <i class="fa fa-paper-plane-o ml-1"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+      <!--/Form with header-->
+    </div>
+  </section>
+
+
+
+</body>
+
+<!-- SCRIPTS -->
+<script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="/javascripts/popper.min.js"></script>
+<script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+<script>
+  new WOW().init();
+</script>
+</body>
+
+</html>

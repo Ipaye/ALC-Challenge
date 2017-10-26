@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>
+    <%=title%>
+  </title>
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+  <link href="/stylesheets/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <strong>Student Records</strong>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-7" aria-controls="navbarSupportedContent-7"
+          aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-7">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">
+                <i class="fa fa-home"></i>Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/student">All Students</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/student/add">Add Student</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--Intro Section-->
+    <section class="view intro-2 hm-gradient">
+      <div class="full-bg-img">
+        <div class="container flex-center">
+          <div class="row flex-center pt-5 mt-3">
+            <div class="col-md-6 text-center text-md-left margins">
+              <div class="white-text">
+                <h1 class="h1-responsive wow fadeInLeft" data-wow-delay="0.3s">Welcome to the AlC Student Records</h1>
+                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">We keep track of all the informations of Students ranging from their Names to their course of sutdent. To
+                  access the student details portal, click on the links below</h6>
+                <br>
+                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s" href="/student">View Students</a>
+                <a class="btn btn-outline-white wow fadeInLeft" data-wow-delay="0.3s" href="/add">Add Students
+                  <i class="fa fa-android left right" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="col-md-6 wow fadeInRight d-flex justify-content-center" data-wow-delay="0.3s">
+              <img src="http://res.cloudinary.com/ipaye/image/upload/dl_3,f_auto,fl_progressive.rasterize,q_80/v1509044177/Black%20guy.png"
+                alt="school lady picture" class="img-responsive">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </header>
+
+  <!-- SCRIPTS -->
+  <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/javascripts/popper.min.js"></script>
+  <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
+  <script>
+    new WOW().init();
+  </script>
+</body>
+
+</html>
