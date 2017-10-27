@@ -42,11 +42,6 @@ app.get('/', (req,res,next)=>{
     message : 'Welcome to the api page, go to /students to access the API.'
   })
 })
-app.get('*', (req,res,next)=>{
-  res.status(400).json({
-    message : 'Page not found'
-  })
-})
 
 // Catch 404 Errors and forward them to error handler
 app.use((req, res, next)=>{
