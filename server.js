@@ -12,7 +12,7 @@ mongoose.Promise = global.Promise;
 
 // mongoose Connection 
 mongoose.connect('mongodb://ipaye:studentrecord@ds121495.mlab.com:21495/alc-student-record', {useMongoClient :true});
-
+// mongoose.connect('mongodb://localhost/ALC-studentRecord', {useMongoClient : true});
 // Check Connection
 mongoose.connection.on('connect', ()=> {
   console.log('connect to the db');  
@@ -39,7 +39,12 @@ app.use('/students', student);
 // Route for the home Page
 app.get('/', (req,res,next)=>{
   res.status(200).json({
-    message : 'You requested the index page'
+    message : 'Welcome to the api page, go to /students to access the API.'
+  })
+})
+app.get('*', (req,res,next)=>{
+  res.status(400).json({
+    message : 'Page not found'
   })
 })
 
