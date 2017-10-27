@@ -39,7 +39,12 @@ app.use('/students', student);
 // Route for the home Page
 app.get('/', (req,res,next)=>{
   res.status(200).json({
-    message : 'You requested the index page'
+    message : 'Welcome to the api, go to /students to access the Students API'
+  })
+})
+app.get('*', (req,res,next)=>{
+  res.status(404).json({
+    message : 'Page not found'
   })
 })
 
