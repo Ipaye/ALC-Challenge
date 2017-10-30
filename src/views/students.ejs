@@ -19,50 +19,12 @@
       padding-top: 50px;
     }
 
-    .trigger {
-      padding: 1px 10px;
-      font-size: 12px;
-      font-weight: 400;
-      border-radius: 10px;
-      background-color: #eee;
-      color: #212121;
-      display: inline-block;
-      margin: 2px 5px;
-    }
-
-    .hoverable,
-    .trigger {
-      transition: box-shadow 0.55s;
-      box-shadow: 0;
-    }
-
-    .hoverable:hover,
-    .trigger:hover {
-      transition: box-shadow 0.45s;
-      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .student-card {
+      padding-bottom: 10px;
     }
 
     .active {
-      background-color: rgba(245, 23, 189, 0.671) !important;
-    }
-
-    .input-group.md-form.form-sm.form-2 input {
-      border: 1px solid #bdbdbd;
-      border-top-left-radius: 0.25rem;
-      border-bottom-left-radius: 0.25rem;
-    }
-
-    .input-group.md-form.form-sm.form-2 input.grey-border {
-      border: 1px solid #e9ecef;
-    }
-
-    .input-group input[type=text]:focus:not([readonly]) {
-      box-shadow: none;
-      padding: 10px;
-    }
-
-    .form-2 .input-group-addon {
-      border: 1px solid #e9ecef;
+      background-color: #4285F4;
     }
   </style>
 </head>
@@ -102,68 +64,31 @@
 
   <section id="student-section">
     <div class="container">
-
-      <div class="card">
-        <div class="card-body">
-
-          <!-- Grid row -->
-
-          <div class="row">
-            <!-- Grid column -->
-            <div class="col-md-12 col-sm-12 col-xs-12 mt-4">
-
-              <div class="input-group md-form form-sm form-2 pl-0">
-                <input class="form-control my-0 py-1 grey-border" type="text" placeholder="Search" aria-label="Search">
-                <span class="input-group-addon waves-effect grey lighten-3" id="basic-addon1">
-                  <a>
-                    <i class="fa fa-search text-grey" aria-hidden="true"></i>
-                  </a>
-                </span>
+      <div class="jumbotron">
+        <h3 style="padding:10px;">All Student Records</h3>
+        <div class="row">
+          <%students.forEach(function(student, index){%>
+            <div class="col-xs-6 col-md-4 student-card">
+              <div class="card">
+                <p class="card-header amber lighten-1 black-text">
+                  Student Name:
+                  <%=student.firstName%>
+                    <%=student.lastName%>
+                </p>
+                <div class="card-body">
+                  <h4 class="card-title">
+                    Email Address :
+                  </h4>
+                  <%=student.email%>
+                    <p class="card-text">
+                      Address :
+                      <%=student.address%>.</p>
+                </div>
+                <a href="/student/view/<%=student._id%>" class="btn btn-primary btn-rounded">View</a>
+                <a href="/student/edit/<%=student._id%>" class="btn btn-primary btn-rounded">Edit</a>
               </div>
-
             </div>
-            <!-- Grid column -->
-
-
-            <!-- Grid row -->
-
-            <!--Table-->
-            <div class="col-md-12 col-xs-12 col-sm-12 mt-4">
-              <table class="table table-responsive">
-                <!--Table head-->
-                <thead>
-                  <tr>
-                    <th>S.No</th>
-                    <th>Full Name</th>
-                    <th>Email</th>
-                    <!-- <th>Action</th> -->
-                  </tr>
-                </thead>
-                <!--Table head-->
-
-                <!--Table body-->
-                <% students.forEach(function(student, index) {%>
-                  <tbody>
-                    <tr>
-                      <th scope="row">
-                        <%=index + 1%>
-                      </th>
-                      <td>
-                        <%=student.firstName%>
-                          <%=student.lastName%>
-                      </td>
-                      <td>
-                        <%=student.email%>
-                      </td>
-                    </tr>
-                  </tbody>
-                  <!--Table body-->
-                  <%});%>
-              </table>
-            </div>
-            <!--Table-->
-
-          </div>
+            <%});%>
         </div>
       </div>
     </div>

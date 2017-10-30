@@ -15,35 +15,25 @@
   <link href="/stylesheets/mdb.min.css" rel="stylesheet">
   <!-- <link href="/stylesheets/style.css" rel="stylesheet"> -->
   <style>
-    section#student-section {
-      padding-top: 100px;
+    section#info-section {
+      padding-top: 50px;
+    }
+
+    .isactive {
+      color: #4285F4;
+    }
+
+    .Styled {
+      margin-left: 6vw;
+      padding-top: 50px;
     }
 
     .active {
-      background-color: rgba(245, 23, 189, 0.671) !important;
+      background-color: #4285F4;
     }
 
-    .trigger {
-      padding: 1px 10px;
-      font-size: 12px;
-      font-weight: 400;
-      border-radius: 10px;
-      background-color: #eee;
-      color: #212121;
-      display: inline-block;
-      margin: 2px 5px;
-    }
-
-    .hoverable,
-    .trigger {
-      transition: box-shadow 0.55s;
-      box-shadow: 0;
-    }
-
-    .hoverable:hover,
-    .trigger:hover {
-      transition: box-shadow 0.45s;
-      box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    p {
+      font-weight: bold;
     }
   </style>
 </head>
@@ -51,131 +41,102 @@
 <body>
   <header>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-amber ">
+    <nav class="mb-1 navbar navbar-expand-lg navbar-dark amber">
       <div class="container">
-        <a class="navbar-brand" href="/">
-          <strong>Student Records</strong>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        <a class="navbar-brand" href="/">Student Records</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4" aria-controls="navbarSupportedContent-4"
           aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-          <ul class="nav navbar-nav nav-flex-icons ml-auto">
+        <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
+          <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" href="/">Home
+              <a class="nav-link waves-effect waves-light" href="/">
+                <i class="fa fa-envelope"></i> Home </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect waves-light" href="/student">
+                <i class="fa fa-users"></i> All Students
+                <span class="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item active">
-              <a class="nav-link " href="#">View All Student</a>
-              <span class="sr-only">(current)</span>
+            <li class="nav-item ">
+              <a class="nav-link waves-effect waves-light" href="/student/add">
+                <i class="fa fa-user"></i> Add Student</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Add Student</a>
-            </li>
-            <form class="form-inline">
-              <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-            </form>
           </ul>
-          </ul>
+
         </div>
       </div>
     </nav>
-
   </header>
 
-  <div class="container">
-    <section id="student-section">
-      <div class="container">
-      <h1>All Students Records</h1>
-      <div class="modal fade" id="conditionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-notify modal-success" role="document">
-          <!--Content-->
-          <div class="modal-content">
-            <!--Header-->
-            <div class="modal-header">
-              <p class="heading lead">Modal Success</p>
+  <section id="info-section">
+    <div class="container">
+      <div class="jumbotron">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item isactive">
+            <a href="/student">View All Student</a>
+          </li>
+          <li class="breadcrumb-item">Single Student</li>
+        </ol>
+        <div style="padding:20px;"></div>
 
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true" class="white-text">&times;</span>
-              </button>
+        <div class="row">
+          <div class="col-md-9">
+            <h1 class="text-center">
+              <span class="badge red">
+                <%=singleStudent.firstName%>
+                  <%=singleStudent.lastName%>
+              </span> Record View
+
+            </h1>
+            <div class="Styled">
+              <p class="lead">Name :
+                <%=singleStudent.firstName%>
+                  <%=singleStudent.lastName%>
+              </p>
+              <p class="lead">Last :
+                <%=singleStudent.email%>
+              </p>
+              <p class="lead">Address :
+                <%=singleStudent.address%>
+              </p>
+              <p class="lead">Phone Number :
+                <%=singleStudent.phoneNumber%>
+              </p>
+              <p class="lead">Date of Birth :
+                <%=singleStudent.dob%>
+              </p>
+              <p class="lead">Coure of Study :
+                <%=singleStudent.course%>
+              </p>
+              <p class="lead">Current Year :
+                <%=singleStudent.level%> Level
+              </p>
+              <p class="lead">Gender :
+                <%=singleStudent.gender%>
+              </p>
+
             </div>
 
-            <!--Body-->
-            <div class="modal-body">
-              <div class="text-center">
-                <i class="fa fa-check fa-4x mb-3 animated rotateIn"></i>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Impedit iusto nulla aperiam blanditiis ad consequatur
-                  in dolores culpa, dignissimos, eius non possimus fugiat. Esse ratione fuga, enim, ab officiis totam.
-                </p>
-              </div>
-            </div>
-
-            <!--Footer-->
-            <div class="modal-footer justify-content-center">
-              <a type="button" class="btn btn-primary-modal">Get it now
-                <i class="fa fa-diamond ml-1"></i>
-              </a>
-              <a type="button" class="btn btn-outline-secondary-modal waves-effect" data-dismiss="modal">No, thanks</a>
-            </div>
           </div>
-          <!--/.Content-->
+          <div class="col-md-3">
+            <img src="<%=singleStudent.profileImage%>" alt="" width="200px">
+          </div>
+        </div>
+        <div style="padding:33px;"></div>
+        <div class="text-center">
+          <hr class="my-2">
+          <div style="padding:33px;"></div>
+          <h4>To Edit the student details above, Click on the link below
+          </h4>
+          <a class="btn btn-primary" href="/student/edit/<%=singleStudent._id%>" role="button">Edit</a>
         </div>
       </div>
-      <!-- Central Modal Success Demo-->
-
-      <!-- Accordion card -->
-      <div class="card p-3">
-
-        <table class="table">
-          <thead>
-            <tr>
-              <th>S.No</th>
-              <th>FirstName</th>
-              <th>LastName</th>
-              <th>Email Address</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            <%students.forEach(function(student, index){ %>
-              <tr>
-                <th scope="row">
-                  <%=index + 1%>
-                </th>
-                <a href="#">
-                  <td>
-                    <%=student.firstName%>
-                  </td>
-                  <td>
-                    <%=student.lastName%>
-                  </td>
-                  <td>
-                    <%=student.email%>
-                  </td>
-                  <td class="text-left">
-                    <a class="trigger info-color text-white" href="/student/<%=student._id%>">
-                      <i class="fa fa-eye mx-1"></i>View
-                    </a>
-                    <a class="trigger teal lighten-4" href="/student/<%=student._id%>">
-                      <i class="fa fa-pencil-square mx-1" data-toggle="modal" data-target="#conditionModal"></i>Edit
-                    </a>
-                    <a class="trigger info-color text-white" href="/student/<%=student._id%>">
-                      <i class="fa fa-times mx-1"></i>Delete
-                    </a>
-                  </td>
-              </tr>
-              <% }); %>
-          </tbody>
-        </table>
+  </section>
 
 
-      </div>
-    </div>
-    </section>
-
-  </div>
 
 
 </body>

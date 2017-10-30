@@ -1,3 +1,68 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="../../favicon.ico">
+
+  <title>Error</title>
+
+  <link rel="shortcut icon" href="./favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
+  <link href="/stylesheets/mdb.min.css" rel="stylesheet">
+</head>
+<style>
+  .error {
+    margin: 100px auto;
+  }
+
+  body {
+    background: -moz-linear-gradient(45deg, rgba(206, 152, 34, 0.6), rgba(29, 210, 177, 0.6) 100%);
+    background: -webkit-linear-gradient(45deg, rgba(206, 152, 34, 0.6), rgba(29, 210, 177, 0.6) 100%);
+    background: -webkit-gradient(linear, 45deg, from(rgba(206, 152, 34, 0.6)), to(rgba(29, 210, 177, 0.6)));
+    background: -o-linear-gradient(45deg, rgba(206, 152, 34, 0.6), rgba(29, 210, 177, 0.6) 100%);
+    background: linear-gradient(to 45deg, rgba(206, 152, 34, 0.6), rgba(29, 210, 177, 0.6) 100%);
+  }
+</style>
+
+<body>
+
+  <div class="container">
+    <div class="jumbotron error text-center">
+      <h1>Ops! Seems like something Went Wrong 🙁🙍</h1>
+      <h1 style="font-size:300px;">
+        <%=error.status%>
+      </h1>
+      <p>
+        <%=error.mesage%>
+          <%=error.stack%>
+      </p>
+      <p class="lead">
+
+      </p>
+      <p>
+        <a class="btn btn-lg btn-success" href="/" role="button">Home</a>
+      </p>
+    </div>
+  </div>
+
+  <footer class="footer text-center">
+    <h2 style="font-weight:300;">Made With 💛 by Ipaye Alameen</h2>
+  </footer>
+
+  </div>
+  <!-- /container -->
+
+
+  <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  <script src="../../assets/js/ie10-viewport-bug-workaround.js"></script>
+</body>
+
+</html>

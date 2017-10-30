@@ -56,7 +56,7 @@
               <a class="nav-link " href="/student">
                 <i class="fa fa-users"></i>View All Student</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
               <a class="nav-link" href="/add">
                 <i class="fa fa-user"></i>Add Student</a>
               <span class="sr-only">(current)</span>
@@ -71,12 +71,17 @@
 
   <section class="form-simple">
     <div class="container">
-
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item isactive">
+          <a href="/student">View All Student</a>
+        </li>
+        <li class="breadcrumb-item">Edit Student</li>
+      </ol>
       <!--Form with header-->
       <div class="card">
-
         <!--Header-->
         <div class="header pt-3 grey lighten-2">
+
 
           <div class="row d-flex justify-content-start text-capitalize text-center">
             <h3 class="deep-grey-text mt-3 mb-4 pb-1 mx-5">Add Student</h3>
@@ -90,50 +95,101 @@
           <!--Body-->
           <form action="/student/add" method="post">
             <div class="md-form">
-              <input type="text" id="firstname" name="firstName" class="form-control" required>
+              <input value="<%=student.firstName%>" type="text" id="firstname" name="firstName" class="form-control" required>
               <label>Your First Name</label>
             </div>
             <div class="md-form">
-              <input type="text" name="lastName" class="form-control" required>
+              <input value="<%=student.lastName%>" type="text" name="lastName" class="form-control" required>
               <label>Your last Name</label>
             </div>
             <div class="md-form">
-              <input type="email" name="email" class="form-control" required>
+              <input value="<%=student.email%>" type="email" name="email" class="form-control" required>
               <label>Your email</label>
             </div>
             <div class="md-form">
-              <input type="text" name="address" class="form-control" required>
+              <input value="<%=student.address%>" type="text" name="address" class="form-control" required>
               <label>Your Address</label>
             </div>
             <div class="md-form">
               <select name="gender" class="form-control" required>
-                <option value="male">Male</option>
-                <option value="female">Female</option>
+                <% if (student.gender =='Female') { %>
+                  <option value="male">Male</option>
+                  <option selected value="<%=student.gender%>">
+                    <%=student.gender%>
+                  </option>
+                  <%};%>
+                    <% if (student.gender == 'Male') { %>
+                      <option selected value="<%=student.gender%>">
+                        <%=student.gender%>
+                      </option>
+                      <option value="female">Female</option>
+                      <%};%>
               </select>
             </div>
             <div class="form-group">
-              <select name="Level" class="form-control" required="required" placeholder="Enter Your level">
-                <option value="">Enter Your Level</option>
-                <option value="100">100</option>
-                <option value="200">200</option>
-                <option value="300">300</option>
-                <option value="400">400</option>
-                <option value="500">500</option>
+              <label for="">Enter your Level</label>
+              <select name="Level" class="form-control" required placeholder="Enter Your level">
+                <% if (student.level == 100) { %>
+                  <option selected value="<%=student.level%>">
+                    <%=student.level%>
+                  </option>
+                  <option value="200">200</option>
+                  <option value="300">300</option>
+                  <option value="400">400</option>
+                  <option value="500">500</option>
+                  <% } %>
+                    <% if (student.level == 200) { %>
+                      <option selected value="<%=student.level%>">
+                        <%=student.level%>
+                      </option>
+                      <option value="100">100</option>
+                      <option value="300">300</option>
+                      <option value="400">400</option>
+                      <option value="500">500</option>
+                      <% } %>
+                        <% if (student.level == 300) { %>
+                          <option selected value="<%=student.level%>">
+                            <%=student.level%>
+                          </option>
+                          <option value="200">200</option>
+                          <option value="300">100</option>
+                          <option value="400">400</option>
+                          <option value="500">500</option>
+                          <% } %>
+                            <% if (student.level == 400) { %>
+                              <option selected value="<%=student.level%>">
+                                <%=student.level%>
+                              </option>
+                              <option value="200">200</option>
+                              <option value="300">300</option>
+                              <option value="400">100</option>
+                              <option value="500">500</option>
+                              <% } %>
+                                <% if (student.level == 500) { %>
+                                  <option selected value="<%=student.level%>">
+                                    <%=student.level%>
+                                  </option>
+                                  <option value="200">200</option>
+                                  <option value="300">300</option>
+                                  <option value="400">400</option>
+                                  <option value="500">100</option>
+                                  <% } %>
+
               </select>
             </div>
             <br>
             <hr>
             <div class="md-form">
-              <input type="number" name="phoneNumber" class="form-control" placeholder="Enter using 2348088884650">
+              <input value="<%=student.phoneNumber%>" type="number" name="phoneNumber" class="form-control" placeholder="Enter using 2348088884650">
               <label>Your phone Number</label>
             </div>
             <div class="form-group">
               <label>Your Date of Birth</label>
-              <input type="date" name="dob" class="form-control">
+              <input value="<%=student.dob%>" type="date" name="dob" class="form-control">
 
             </div>
             <div class="md-form">
-              <input type="text" name="course" class="form-control">
+              <input value="<%=student.course%>" type="text" name="course" class="form-control">
               <label>Your Course of study</label>
             </div>
             <div class="text-center">
