@@ -30,26 +30,7 @@
 </head>
 
 <body>
-  <div id="mdb-preloader" class="flex-center">
-    <div id="preloader-markup">
-      <div class="preloader-wrapper big active">
-        <div class="spinner-layer spinner-blue-only">
-          <div class="circle-clipper left">
-            <div class="circle"></div>
-          </div>
-          <div class="gap-patch">
-            <div class="circle"></div>
-          </div>
-          <div class="circle-clipper right">
-            <div class="circle"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <header>
-
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark amber">
       <div class="container">
         <a class="navbar-brand" href="/">Student Records</a>
@@ -65,13 +46,13 @@
             </li>
             <li class="nav-item active">
               <a class="nav-link waves-effect waves-light" href="/student">
-                <i class="fa fa-users"></i> All Students
+                <i class="fa fa-address-book-o"></i> All Students
                 <span class="sr-only">(current)</span>
               </a>
             </li>
             <li class="nav-item ">
               <a class="nav-link waves-effect waves-light" href="/student/add">
-                <i class="fa fa-user"></i> Add Student</a>
+                <i class="fa fa-user-circle-o"></i>Add Student</a>
             </li>
           </ul>
 
@@ -81,7 +62,7 @@
   </header>
 
   <section id="student-section">
-    <div class="container">
+    <div class="container wow fadeInLeft data-wow-delay=" 0.3s "">
       <div class="jumbotron">
         <h3 style="padding:10px;">All Student Records</h3>
         <div class="row">
@@ -95,15 +76,20 @@
                 </p>
                 <div class="card-body">
                   <h4 class="card-title">
-                    Email Address :
+                    Student Details
                   </h4>
-                  <%=student.email%>
-                    <p class="card-text">
-                      Address :
-                      <%=student.address%>.</p>
+                  <p class="card-text">Email Address :
+                    <%=student.email%>
+                  </p>
+
+                  <p class="card-text">
+                    Address :
+                    <%=student.address%>.</p>
                 </div>
-                <a href="/student/view/<%=student._id%>" class="btn btn-primary btn-rounded">View</a>
-                <a href="/student/edit/<%=student._id%>" class="btn btn-primary btn-rounded">Edit</a>
+                <a href="/student/view/<%=student._id%>" class="btn btn-primary btn-rounded">
+                  <i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                <a href="/student/edit/<%=student._id%>" class="btn btn-primary btn-rounded">
+                  <i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
               </div>
             </div>
             <%});%>
@@ -113,9 +99,11 @@
   </section>
 
 
-
-
+  <footer class="footer text-center" style="background-color: #ffc107;">
+    <p style="margin : 0; padding : 5px;">Made With 💖 by Ipaye Alameen</p>
+  </footer>
 </body>
+
 
 <!-- SCRIPTS -->
 <script type="text/javascript" src="/javascripts/jquery-3.2.1.min.js"></script>

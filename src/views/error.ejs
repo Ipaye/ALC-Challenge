@@ -8,7 +8,7 @@
   <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="../../favicon.ico">
+  <link rel="shortcut icon" href="./favicon.ico">
 
   <title>Error</title>
 
@@ -21,6 +21,10 @@
 <style>
   .error {
     margin: 100px auto;
+  }
+
+  h1 {
+    font-size: 400px;
   }
 
   body {
@@ -37,15 +41,12 @@
   <div class="container">
     <div class="jumbotron error text-center">
       <h1>Ops! Seems like something Went Wrong 🙁🙍</h1>
-      <h1 style="font-size:300px;">
+      <h1>
         <%=error.status%>
       </h1>
       <p>
         <%=error.mesage%>
           <%=error.stack%>
-      </p>
-      <p class="lead">
-
       </p>
       <p>
         <a class="btn btn-lg btn-success" href="/" role="button">Home</a>
@@ -53,10 +54,9 @@
     </div>
   </div>
 
-  <footer class="footer text-center">
-    <h2 style="font-weight:300;">Made With 💛 by Ipaye Alameen</h2>
+  <footer class="footer text-center" style="background-color: #ffc107;">
+    <p style="margin : 0; padding : 5px;">Made With 💖 by Ipaye Alameen</p>
   </footer>
-
   </div>
   <!-- /container -->
 
