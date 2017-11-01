@@ -59,6 +59,24 @@ router.get('/edit/:id', function (req, res, next) {
   });
 })
 
+router.get('/delete/:id', function (req, res, next) {
+  const studentId = req.params.id;
+  console.log(studentId);
+  const options = {
+    url: 'https://alc-student-resource.herokuapp.com/students/' + studentId,
+    method: 'DELETE'
+  };
+
+  const url = "https://alc-student-resource.herokuapp.com/students/" + studentId;
+  request(options, function (error, response, body) {
+    if (!error && response.statusCode == 200) {
+      req.flash('success_msg', 'Student Record Deleted Successfully');
+      res.redirect('/student');
+    }
+  });
+})
+
+
 router.post('/add', function (req, res, next) {
   const studentDetail = req.body;
   const options = {
