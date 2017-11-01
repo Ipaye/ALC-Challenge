@@ -88,10 +88,10 @@
 
   <section class="form-simple">
     <div class="container wow fadeInLeft data-wow-delay=" 3s "">
-      <%if (success_msg > 0) {%>
+      <%if (error_msg.length > 0) {%>
         <div class="alert alert-success alert-dismissable">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <%= success_msg %>
+          <%= error_msg %>
         </div>
         <%};%>
 

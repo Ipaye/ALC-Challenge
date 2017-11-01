@@ -73,146 +73,152 @@
 
   <section id="info-section">
     <div class="container wow fadeInLeft data-wow-delay=" 3s "">
-      <div class="jumbotron">
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item isactive">
-            <a href="/student">View All Student</a>
-          </li>
-          <li class="breadcrumb-item">Single Student</li>
-        </ol>
-        <div style="padding:20px;"></div>
+      <%if (success_msg.length > 0) {%>
+        <div class="alert alert-success alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <%= success_msg %>
+        </div>
+        <%};%>
+          <div class="jumbotron">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item isactive">
+                <a href="/student">View All Student</a>
+              </li>
+              <li class="breadcrumb-item">Single Student</li>
+            </ol>
+            <div style="padding:20px;"></div>
 
-        <div class="row">
-          <div class="col-md-9">
-            <h1 class="text-center">
-              <span class="badge red">
-                <%=singleStudent.firstName%>
-                  <%=singleStudent.lastName%>
-              </span> Record View
+            <div class="row">
+              <div class="col-md-9">
+                <h1 class="text-center">
+                  <span class="badge red">
+                    <%=singleStudent.firstName%>
+                      <%=singleStudent.lastName%>
+                  </span> Record View
 
-            </h1>
-            <div class="Styled">
+                </h1>
+                <div class="Styled">
 
-              <table class="table table-bordered table-responsive">
-                <tbody>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Name :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.firstName%>
-                          <%=singleStudent.lastName%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Email :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.email%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Address :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.address%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Phone Number :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.phoneNumber%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Course of Study :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.course%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Date of Birth :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.dob%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Gender :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.gender%>
-                      </p>
-                    </td>
-                  </tr>
-                  <tr>
-                    <td>
-                      <p>
-                        <span style="color:black; font-weight:400">Current Year :</span>
-                      </p>
-                    </td>
-                    <td>
-                      <p>
-                        <%=singleStudent.course%> Level
-                      </p>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
+                  <table class="table table-bordered table-responsive">
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Name :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.firstName%>
+                              <%=singleStudent.lastName%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Email :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.email%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Address :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.address%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Phone Number :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.phoneNumber%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Course of Study :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.course%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Date of Birth :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.dob%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Gender :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.gender%>
+                          </p>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p>
+                            <span style="color:black; font-weight:400">Current Year :</span>
+                          </p>
+                        </td>
+                        <td>
+                          <p>
+                            <%=singleStudent.course%> Level
+                          </p>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+              </div>
+              <div class="col-md-3">
+                <img src="<%=singleStudent.profileImage%>" alt="" width="200px">
+              </div>
             </div>
-
+            <div style="padding:33px;"></div>
+            <div class="text-center">
+              <hr class="my-2">
+              <div style="padding:33px;"></div>
+              <h4>To Edit the student details above, Click on the link below
+              </h4>
+              <a class="btn btn-primary" href="/student/edit/<%=singleStudent._id%>" role="button">
+                <i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
+              <a class="btn btn-danger" href="/student/delete/<%=singleStudent._id%>" role="button">
+                <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
+            </div>
           </div>
-          <div class="col-md-3">
-            <img src="<%=singleStudent.profileImage%>" alt="" width="200px">
-          </div>
-        </div>
-        <div style="padding:33px;"></div>
-        <div class="text-center">
-          <hr class="my-2">
-          <div style="padding:33px;"></div>
-          <h4>To Edit the student details above, Click on the link below
-          </h4>
-          <a class="btn btn-primary" href="/student/edit/<%=singleStudent._id%>" role="button">
-            <i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
-          <a class="btn btn-danger" href="/student/delete/<%=singleStudent._id%>" role="button">
-            <i class="fa fa-trash-o" aria-hidden="true"></i> Delete</a>
-        </div>
-      </div>
   </section>
 
 
