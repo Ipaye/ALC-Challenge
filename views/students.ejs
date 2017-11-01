@@ -63,38 +63,45 @@
 
   <section id="student-section">
     <div class="container wow fadeInLeft data-wow-delay=" 3s "">
-      <div class="jumbotron">
-        <h3 style="padding:10px;">All Student Records</h3>
-        <div class="row">
-          <%students.forEach(function(student, index){%>
-            <div class="col-xs-6 col-md-4 student-card">
-              <div class="card">
-                <p class="card-header amber lighten-1 black-text">
-                  Student Name:
-                  <%=student.firstName%>
-                    <%=student.lastName%>
-                </p>
-                <div class="card-body">
-                  <h4 class="card-title">
-                    Student Details
-                  </h4>
-                  <p class="card-text">Email Address :
-                    <%=student.email%>
-                  </p>
-
-                  <p class="card-text">
-                    Address :
-                    <%=student.address%>.</p>
-                </div>
-                <a href="/student/view/<%=student._id%>" class="btn btn-primary btn-rounded">
-                  <i class="fa fa-eye" aria-hidden="true"></i> View</a>
-                <a href="/student/edit/<%=student._id%>" class="btn btn-primary btn-rounded">
-                  <i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
-              </div>
-            </div>
-            <%});%>
+      <%if (success_msg.length > 0) {%>
+        <div class="alert alert-success alert-dismissable">
+          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+          <%= success_msg %>
         </div>
-      </div>
+        <%};%>
+
+          <div class="jumbotron">
+            <h3 style="padding:10px;">All Student Records</h3>
+            <div class="row">
+              <%students.forEach(function(student, index){%>
+                <div class="col-xs-6 col-md-4 student-card">
+                  <div class="card">
+                    <p class="card-header amber lighten-1 black-text">
+                      Student Name:
+                      <%=student.firstName%>
+                        <%=student.lastName%>
+                    </p>
+                    <div class="card-body">
+                      <h4 class="card-title">
+                        Student Details
+                      </h4>
+                      <p class="card-text">Email Address :
+                        <%=student.email%>
+                      </p>
+
+                      <p class="card-text">
+                        Address :
+                        <%=student.address%>.</p>
+                    </div>
+                    <a href="/student/view/<%=student._id%>" class="btn btn-primary btn-rounded">
+                      <i class="fa fa-eye" aria-hidden="true"></i> View</a>
+                    <a href="/student/edit/<%=student._id%>" class="btn btn-primary btn-rounded">
+                      <i class="fa fa-edit" aria-hidden="true"></i> Edit</a>
+                  </div>
+                </div>
+                <%});%>
+            </div>
+          </div>
     </div>
   </section>
 
@@ -111,6 +118,9 @@
 <script type="text/javascript" src="/javascripts/bootstrap.min.js"></script>
 <script type="text/javascript" src="/javascripts/mdb.min.js"></script>
 <script>
+  $("#alert-target").click(function () {
+    toastr["info"]("I was launched via jQuery!")
+  });
   new WOW().init();
 </script>
 </body>

@@ -60,7 +60,25 @@ router.get('/edit/:id', function (req, res, next) {
 })
 
 router.post('/add', function (req, res, next) {
-  console.log(req.body);
+  const studentDetail = req.body;
+  const options = {
+    url: 'https://alc-student-resource.herokuapp.com/students',
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+    },
+    json: true,
+    body: studentDetail
+  };
+
+  request(options, function (error, response, body) {
+    console.log(response);
+    if (!error && response.statusCode == 201) {
+      let success = response.message;
+      req.flash('success_msg', 'Student Record Added Successfully');
+      res.redirect('/student');
+    }
+  });
 })
 
 

@@ -4,6 +4,9 @@ const favicon = require('serve-favicon');
 const logger = require('morgan');
 const bodyParser = require('body-parser');
 const request = require('request');
+const flash = require('connect-flash');
+const session = require('express-session');
+// const flash = require('express-messages');
 
 const index = require('./routes/index');
 const students = require('./routes/student');
@@ -23,8 +26,27 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.use(session({
+  secret: "ALCstudentrecords",
+  saveUninitialized: true,
+  resave: true
+}));
+
+app.use(flash());
+
+app.use(function (req, res, next) {
+  res.locals.success_msg = req.flash('success_msg');
+  res.locals.error_msg = req.flash('error_msg');
+  next();
+})
+
+
 app.use('/', index);
 app.use('/student', students);
+app.get('*', (req, res, next) => {
+  res.status(404);
+  res.render('error');
+})
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   const err = new Error('Not Found');
