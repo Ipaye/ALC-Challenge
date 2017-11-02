@@ -32,3 +32,15 @@ RUN `npm install` to get all dependencies.
 - [x] Get a Student and display their details.
 - [x] Get a student and update their details.
 - [x] delete a single student record.
+
+## End points 
+- `GET /students` - this list out all the students
+- `GET /student/:id` this gets a single student 
+- `POST /students` - this creates a single student
+- `PATCH /student/:id` this updates a single student
+- `GET /students` - this list out all the students
+- `DELETE /student/:id` this deletes a single student 
+
+## Link to the api
+
+this is the link to the [Api](https://alc-student-resource.herokuapp.com)
