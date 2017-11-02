@@ -135,18 +135,23 @@
                 </div>
                 <div class="md-form">
                   <select name="gender" class="form-control" required>
-                    <% if (student.gender =='Female') { %>
+                    <% if (student.gender.toLowerCase() =='female') { %>
                       <option value="male">Male</option>
-                      <option selected value="<%=student.gender%>">
+                      <option selected value="<%=student.gender.toLowerCase()%>">
                         <%=student.gender%>
                       </option>
                       <%};%>
-                        <% if (student.gender == 'Male') { %>
-                          <option selected value="<%=student.gender%>">
+                        <% if (student.gender.toLowerCase() == 'male') { %>
+                          <option selected value="<%=student.gender.toLowerCase()%>">
                             <%=student.gender%>
                           </option>
                           <option value="female">Female</option>
                           <%};%>
+                            <% if (!student.gender) { %>
+                              <option value=""></option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                              <%};%>
                   </select>
                 </div>
                 <div class="form-group">
@@ -216,7 +221,7 @@
                   <label>Your Course of study</label>
                 </div>
                 <div class="text-center">
-                  <button class="btn btn-unique" type="submit">Add Student
+                  <button class="btn btn-unique" type="submit">Update Student
                     <i class="fa fa-paper-plane-o ml-1"></i>
                   </button>
                 </div>
