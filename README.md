@@ -15,6 +15,8 @@ clone this project locally using `git clone filename`
 
 `cd into the cloned folder`.
 
+to access the frontend implementation, switch the branch to `alc-frontend`
+
 RUN `npm install` to get all dependencies.
 
 
@@ -44,3 +46,4 @@ RUN `npm install` to get all dependencies.
 ## Link to the api
 
 this is the link to the [Api](https://alc-student-resource.herokuapp.com)
+
