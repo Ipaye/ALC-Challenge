@@ -71,9 +71,9 @@ router.post('/edit/:id', function (req, res, next) {
       req.flash('success_msg', 'Student Record Updated Successfully');
       res.redirect(`/student`);
     }
-    if (error && response.statusCode == 400) {
+    if (response.statusCode == 400) {
       req.flash('error_msg', 'Student Record Failed to Update Record 😦, check your inputs.');
-      res.render('editStudent');
+      res.redirect('/student');
     }
   });
 })
@@ -84,8 +84,6 @@ router.post('/edit/:id', function (req, res, next) {
 
 router.get('/edit/:id', function (req, res, next) {
   const studentId = req.params.id;
-  console.log(studentId);
-
   const url = "https://alc-student-resource.herokuapp.com/students/" + studentId;
   request(url, function (error, response, body) {
     if (!error && response.statusCode == 200) {
@@ -136,14 +134,16 @@ router.post('/add', function (req, res, next) {
   };
 
   request(options, function (error, response, body) {
+    // console.log(response.body.details);
+
     if (!error && response.statusCode == 201) {
       let success = response.message;
       req.flash('success_msg', 'Student Record Added Successfully');
       res.redirect('/student');
     }
-    if (error && response.statusCode == 400) {
+    if (response.statusCode == 400) {
       req.flash('error_msg', 'Student Record Failed to Add 😦, check your inputs.');
-      res.render('addStudent');
+      res.redirect('/student/add');
     }
   });
 })
