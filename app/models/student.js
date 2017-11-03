@@ -33,6 +33,7 @@ const studentSchema = new schema({
   },
   course: {
     type: String,
+    default: ''
   },
   profileImage: {
     type: String,

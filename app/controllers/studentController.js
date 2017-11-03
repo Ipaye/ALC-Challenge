@@ -8,7 +8,6 @@ module.exports = {
     Student.find({}).then((students) => {
       res.status(200).json(students)
     }).catch((err) => {
-      console.log(err);
       next(err);
     })
   },

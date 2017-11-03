@@ -45,25 +45,25 @@ module.exports = {
       firstName: Joi.string().required(),
       lastName: Joi.string().required(),
       email: Joi.string().email().required(),
-      address: Joi.string(),
-      course: Joi.string(),
+      address: Joi.string().allow(''),
+      course: Joi.string().allow(''),
       dob: Joi.string().required(),
       gender: Joi.string(),
-      phoneNumber: Joi.number(),
-      level: Joi.number(),
-      profileImage : Joi.string()
+      phoneNumber: Joi.number().allow(''),
+      level: Joi.number().allow(''),
+      profileImage: Joi.string().allow('')
     }),
-    updateSchema : Joi.object().keys({
+    updateSchema: Joi.object().keys({
       firstName: Joi.string(),
       lastName: Joi.string(),
       email: Joi.string().email(),
-      address: Joi.string(),
-      course: Joi.string(),
-      dob: Joi.string(),
-      gender: Joi.string(),
-      phoneNumber: Joi.number(),
-      level: Joi.number(),
-      profileImage : Joi.string()
+      address: Joi.string().allow(''),
+      course: Joi.string().allow(''),
+      dob: Joi.string().allow(''),
+      gender: Joi.string().allow(''),
+      phoneNumber: Joi.number().allow(''),
+      level: Joi.number().allow(''),
+      profileImage: Joi.string()
     })
   }
 
