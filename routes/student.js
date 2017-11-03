@@ -134,7 +134,7 @@ router.post('/add', function (req, res, next) {
   };
 
   request(options, function (error, response, body) {
-    // console.log(response.body.details);
+    console.log(response.body.details);
 
     if (!error && response.statusCode == 201) {
       let success = response.message;
