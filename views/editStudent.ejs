@@ -167,41 +167,51 @@
                       <option value="500">500</option>
                       <% } %>
                         <% if (student.level == 200) { %>
+
+                          <option value="100">100</option>
                           <option selected value="<%=student.level%>">
                             <%=student.level%>
                           </option>
-                          <option value="100">100</option>
                           <option value="300">300</option>
                           <option value="400">400</option>
                           <option value="500">500</option>
                           <% } %>
                             <% if (student.level == 300) { %>
+                              <option value="100">100</option>
+                              <option value="200">200</option>
                               <option selected value="<%=student.level%>">
                                 <%=student.level%>
                               </option>
-                              <option value="200">200</option>
-                              <option value="300">100</option>
                               <option value="400">400</option>
                               <option value="500">500</option>
                               <% } %>
                                 <% if (student.level == 400) { %>
+
+                                  <option value="100">100</option>
+                                  <option value="200">200</option>
+                                  <option value="300">300</option>
                                   <option selected value="<%=student.level%>">
                                     <%=student.level%>
                                   </option>
-                                  <option value="200">200</option>
-                                  <option value="300">300</option>
-                                  <option value="400">100</option>
                                   <option value="500">500</option>
                                   <% } %>
                                     <% if (student.level == 500) { %>
-                                      <option selected value="<%=student.level%>">
-                                        <%=student.level%>
-                                      </option>
                                       <option value="200">200</option>
                                       <option value="300">300</option>
                                       <option value="400">400</option>
                                       <option value="500">100</option>
+                                      <option selected value="<%=student.level%>">
+                                        <%=student.level%>
+                                      </option>
                                       <% } %>
+                                        <% if (!student.level || student.level == '') { %>
+                                          <option selected value=""></option>
+                                          <option value="100">100</option>
+                                          <option value="200">200</option>
+                                          <option value="300">300</option>
+                                          <option value="400">400</option>
+                                          <option value="500">500</option>
+                                          <% } %>
 
                   </select>
                 </div>
@@ -213,7 +223,7 @@
                 </div>
                 <div class="form-group">
                   <label>Your Date of Birth</label>
-                  <input value="<%=student.dob%>" type="date" name="dob" class="form-control">
+                  <input value="<%=student.dob%>" type="date" name="dob" class="form-control" required>
 
                 </div>
                 <div class="md-form">
