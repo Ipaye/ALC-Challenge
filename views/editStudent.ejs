@@ -89,7 +89,7 @@
   <section class="form-simple">
     <div class="container wow fadeInLeft data-wow-delay=" 3s "">
       <%if (error_msg.length > 0) {%>
-        <div class="alert alert-success alert-dismissable">
+        <div class="alert alert-danger alert-dismissable">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <%= error_msg %>
         </div>
@@ -130,7 +130,7 @@
                   <label>Your email</label>
                 </div>
                 <div class="md-form">
-                  <input value="<%=student.address%>" type="text" name="address" class="form-control" required>
+                  <input value="<%=student.address%>" type="text" name="address" class="form-control">
                   <label>Your Address</label>
                 </div>
                 <div class="md-form">
