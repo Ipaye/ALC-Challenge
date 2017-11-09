@@ -218,12 +218,13 @@
                 <br>
                 <hr>
                 <div class="md-form">
-                  <input value="<%=student.phoneNumber%>" type="number" name="phoneNumber" class="form-control" placeholder="Enter using 2348088884650">
+                  <input value="<%=student.phoneNumber%>" type="number" name="phoneNumber" class="form-control" name="quantity" max="13" placeholder="Enter using 2348088884650">
                   <label>Your phone Number</label>
                 </div>
                 <div class="form-group">
                   <label>Your Date of Birth</label>
                   <input value="<%=student.dob%>" type="date" name="dob" class="form-control" required>
+                  <abbr title="This field is mandatory">*</abbr>
 
                 </div>
                 <div class="md-form">

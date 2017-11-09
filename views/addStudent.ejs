@@ -121,15 +121,21 @@
               <form action="/student/add" method="post">
                 <div class="md-form">
                   <input type="text" id="firstname" name="firstName" class="form-control" required>
-                  <label>Your First Name</label>
+                  <label>Your First Name
+                    <abbr title="This field is mandatory">*</abbr>
+                  </label>
                 </div>
                 <div class="md-form">
                   <input type="text" name="lastName" class="form-control" required>
-                  <label>Your last Name</label>
+                  <label>Your last Name
+                    <abbr title="This field is mandatory">*</abbr>
+                  </label>
                 </div>
                 <div class="md-form">
                   <input type="email" name="email" class="form-control" required>
-                  <label>Your email</label>
+                  <label>Your email
+                    <abbr title="This field is mandatory">*</abbr>
+                  </label>
                 </div>
                 <div class="md-form">
                   <input type="text" name="address" class="form-control">
@@ -137,12 +143,14 @@
                 </div>
                 <div class="md-form">
                   <select name="gender" class="form-control" required>
+                    <abbr title="This field is mandatory">*</abbr>
                     <option value="male">Male</option>
                     <option value="female">Female</option>
                   </select>
                 </div>
                 <div class="form-group">
                   <select name="level" class="form-control" required placeholder="Enter Your level">
+                    <abbr title="This field is mandatory">*</abbr>
                     <option value="">Enter Your Level</option>
                     <option value="100">100</option>
                     <option value="200">200</option>
@@ -154,13 +162,14 @@
                 <br>
                 <hr>
                 <div class="md-form">
-                  <input type="number" name="phoneNumber" class="form-control" placeholder="Enter using 2348088884650">
+                  <input type="number" name="phoneNumber" class="form-control" placeholder="Enter using 2348088884650" name="quantity" max="13">
                   <label>Your phone Number</label>
                 </div>
                 <div class="form-group">
-                  <label>Your Date of Birth</label>
+                  <label>Your Date of Birth
+                    <abbr title="This field is mandatory">*</abbr>
+                  </label>
                   <input type="date" name="dob" class="form-control" required>
-
                 </div>
                 <div class="md-form">
                   <input type="text" name="course" class="form-control">
