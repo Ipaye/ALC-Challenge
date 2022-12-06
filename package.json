@@ -22,9 +22,9 @@
   },
   "homepage": "https://github.com/Ipaye/ALC-Challenge#readme",
   "dependencies": {
-    "body-parser": "^1.18.2",
+    "body-parser": "^1.20.1",
     "cors": "^2.8.4",
-    "express": "^4.16.1",
+    "express": "^4.18.2",
     "joi": "^13.0.0",
     "mongoose": "^5.7.5",
     "morgan": "^1.9.1"
